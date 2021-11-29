@@ -161,6 +161,11 @@ export const setTheme = (theme) => ({
   theme,
 });
 
+export const setEditorWidth = (editorWidth) => ({
+  type: 'SET_EDITOR_WIDTH',
+  editorWidth,
+});
+
 export const setHasUnseenChangelog = (newHasUnseenChangelog) => ({
   type: 'SET_HAS_UNSEEN_CHANGELOG',
   newHasUnseenChangelog,
