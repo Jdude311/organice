@@ -92,6 +92,12 @@ export const persistableFields = [
   },
   {
     category: 'base',
+    name: 'editorWidth',
+    type: 'boolean',
+    shouldStoreInConfig: true,
+  },
+  {
+    category: 'base',
     name: 'shouldTapTodoToAdvance',
     type: 'boolean',
   },
