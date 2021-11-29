@@ -353,7 +353,7 @@ const themes = {
   },
 };
 
-export const loadTheme = (theme = 'Solarized', colorScheme = 'Light') => {
+export const loadTheme = (theme = 'Solarized', colorScheme = 'Light', editorWidth = true) => {
   if (colorScheme === 'OS') {
     const osPreference = window.matchMedia('(prefers-color-scheme: dark)');
     if ('matches' in osPreference) {
@@ -364,7 +364,7 @@ export const loadTheme = (theme = 'Solarized', colorScheme = 'Light') => {
   }
   const style = document.documentElement.style;
   Object.entries(themes[theme][colorScheme]).forEach(([k, v]) => style.setProperty(k, v));
-
+  style.setProperty('--editorWidth', (editorWidth ? '100%' : '35em'));
   // set theme color on android
   document
     .querySelector('meta[name="theme-color"]')
