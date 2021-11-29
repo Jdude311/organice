@@ -34,6 +34,7 @@ const Settings = ({
   showClockDisplay,
   colorScheme,
   theme,
+  editorWidth,
   base,
   org,
 }) => {
@@ -60,7 +61,9 @@ const Settings = ({
   const handleColorSchemeClick = (colorScheme) => base.setColorScheme(colorScheme);
 
   const handleThemeClick = (theme) => base.setTheme(theme);
-
+  
+  const handleEditorWidthChange = (editorWidth) => base.setEditorWidth(editorWidth);
+  
   const handleBulletStyleChange = (newBulletStyle) => base.setBulletStyle(newBulletStyle);
 
   const handleShouldTapTodoToAdvanceChange = () =>
@@ -134,6 +137,16 @@ const Settings = ({
           selectedButton={theme}
           onSelect={handleThemeClick}
         />
+      </div>
+
+      <div className="setting-container">
+        <div className="setting-label">
+          Use wide editor
+          <div className="setting-label__description">
+            Expand the editor area horizontally for large screen.
+          </div>
+        </div>
+        <Switch isEnabled={editorWidth} onToggle={handleEditorWidthChange} />
       </div>
 
       <div className="setting-container">
@@ -385,6 +398,7 @@ const mapStateToProps = (state) => {
     preferEditRawValues: state.base.get('preferEditRawValues'),
     colorScheme: state.base.get('colorScheme'),
     theme: state.base.get('theme'),
+    editorWidth: state.base.get('editorWidth'),
   };
 };
 
