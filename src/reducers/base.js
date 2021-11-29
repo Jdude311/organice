@@ -8,6 +8,8 @@ const hideLoadingMessage = (state) => state.set('loadingMessage', null);
 
 const setFontSize = (state, action) => state.set('fontSize', action.newFontSize);
 
+const setEditorWidth = (state, action) => state.set('editorWidth', action.editorWidth);
+
 const setBulletStyle = (state, action) => state.set('bulletStyle', action.newBulletStyle);
 
 const setShouldTapTodoToAdvance = (state, action) =>
@@ -146,6 +148,8 @@ export default (state = Map(), action) => {
       return hideLoadingMessage(state, action);
     case 'SET_FONT_SIZE':
       return setFontSize(state, action);
+    case 'SET_EDITOR_WIDTH':
+      return setEditorWidth(state, action);
     case 'SET_BULLET_STYLE':
       return setBulletStyle(state, action);
     case 'SET_SHOULD_TAP_TODO_TO_ADVANCE':
