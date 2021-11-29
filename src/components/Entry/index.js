@@ -151,9 +151,10 @@ class Entry extends PureComponent {
       location: { pathname },
       colorScheme,
       theme,
+      editorWidth,
     } = this.props;
 
-    loadTheme(theme, colorScheme);
+    loadTheme(theme, colorScheme, editorWidth);
 
     const pendingCapturePath = !!pendingCapture && `/file${pendingCapture.get('capturePath')}`;
     const shouldRedirectToCapturePath = pendingCapturePath && pendingCapturePath !== pathname;
@@ -237,6 +238,7 @@ const mapStateToProps = (state) => {
     hasDirtyFiles,
     colorScheme: state.base.get('colorScheme'),
     theme: state.base.get('theme'),
+    editorWidth: state.base.get('editorWidth'),
   };
 };
 
